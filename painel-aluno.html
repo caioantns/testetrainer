@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel do Aluno - iTrainer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <!-- Cabeçalho padrão -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <div class="logo-container"><i class="fas fa-dumbbell"></i></div>
+          <span class="logo-text">iTrainer</span>
+        </a>
+      </div>
+
+      <nav class="primary-navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+          <li class="nav-item"><a href="profissionais.html" class="nav-link">Profissionais</a></li>
+          <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+          <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+          <li class="nav-item"><a href="login.html" class="btn-login">Sair</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="dashboard">
+      <h1>🎯 Bem-vindo, Aluno!</h1>
+      <p>Aqui está o seu painel para acompanhar treinos, metas e progresso.</p>
+
+      <!-- Treino do Dia -->
+      <div class="card">
+        <h2><i class="fas fa-dumbbell"></i> Treino de Hoje</h2>
+        <ul>
+          <li>✅ Agachamento – 4 séries de 10 repetições</li>
+          <li>✅ Supino reto – 3 séries de 12 repetições</li>
+          <li>✅ Corrida – 20 minutos</li>
+        </ul>
+      </div>
+
+      <!-- Progresso -->
+      <div class="card">
+        <h2><i class="fas fa-chart-line"></i> Progresso Físico</h2>
+        <p>Meta semanal: 5 treinos</p>
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: 60%; background-color: var(--primary-color); height: 20px; border-radius: 10px;"></div>
+        </div>
+        <p>Você completou 3 de 5 treinos!</p>
+      </div>
+
+      <!-- Mensagens -->
+      <div class="card">
+        <h2><i class="fas fa-comment-dots"></i> Mensagem do Personal</h2>
+        <blockquote>
+          "Excelente evolução! Continue focado e mantenha uma boa alimentação. 💪"
+        </blockquote>
+      </div>
+
+      <!-- Histórico -->
+      <div class="card">
+        <h2><i class="fas fa-history"></i> Histórico de Atividades</h2>
+        <ul>
+          <li>📅 13/05 - Treino completo</li>
+          <li>📅 12/05 - Faltou ao treino</li>
+          <li>📅 11/05 - Treino completo</li>
+        </ul>
+        <a href="#" class="btn btn-secondary">Ver histórico completo</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé padrão -->
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="iTrainer Logo">
+                <p>Cuidando da sua saúde desde 2025</p>
+            </div>
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="profissionais.html">Profissionais</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contato</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Principal, 123 - Centro</p>
+                <p><i class="fas fa-phone"></i> (21) 1234-5678</p>
+                <p><i class="fas fa-envelope"></i> contato@iTrainer.com</p>
+            </div>
+            <div class="footer-social">
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 iTrainer. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+  <style>
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .dashboard {
+    padding-top: 100px; /* Adicionado para descer o conteúdo abaixo do cabeçalho */
+  }
+
+    .dashboard h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background:black;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+    }
+
+    .progress-bar-container {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 20px;
+      margin: 0.5rem 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary-color);
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #444;
+      border-left: 3px solid var(--primary-color);
+      padding-left: 1rem;
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel do Profissional - iTrainer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <!-- Cabeçalho padrão -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <div class="logo-container"><i class="fas fa-dumbbell"></i></div>
+          <span class="logo-text">iTrainer</span>
+        </a>
+      </div>
+
+      <nav class="primary-navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+          <li class="nav-item"><a href="profissionais.html" class="nav-link">Profissionais</a></li>
+          <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+          <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+          <li class="nav-item"><a href="login.html" class="btn-login">Sair</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="dashboard">
+      <h1>📋 Bem-vindo, Personal!</h1>
+      <p>Gerencie seus alunos, treinos e mensagens com facilidade.</p>
+
+      <!-- Alunos Ativos -->
+      <div class="card">
+        <h2><i class="fas fa-users"></i> Alunos Ativos</h2>
+        <ul>
+          <li>👤 João Silva - Treino A</li>
+          <li>👤 Ana Paula - Treino B</li>
+          <li>👤 Carla Mendes - Treino C</li>
+        </ul>
+        <a href="#" class="btn btn-secondary">Ver todos os alunos</a>
+      </div>
+
+      <!-- Agenda do Dia -->
+      <div class="card">
+        <h2><i class="fas fa-calendar-alt"></i> Agenda de Hoje</h2>
+        <ul>
+          <li>🕘 09:00 - Aula com João</li>
+          <li>🕚 11:00 - Consulta com Ana</li>
+          <li>🕓 16:00 - Feedback com Carla</li>
+        </ul>
+      </div>
+
+      <!-- Mensagens dos Alunos -->
+      <div class="card">
+        <h2><i class="fas fa-comments"></i> Mensagens Recentes</h2>
+        <ul>
+          <li>📩 João: "Fiquei com dúvida no exercício 3."</li>
+          <li>📩 Ana: "Consegui completar o treino!"</li>
+        </ul>
+        <a href="#" class="btn">Responder mensagens</a>
+      </div>
+
+      <!-- Histórico de Treinos -->
+      <div class="card">
+        <h2><i class="fas fa-folder-open"></i> Treinos Enviados</h2>
+        <ul>
+          <li>📁 Treino A - Atualizado em 10/05</li>
+          <li>📁 Treino B - Atualizado em 08/05</li>
+        </ul>
+        <a href="#" class="btn btn-secondary">Ver histórico completo</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé padrão -->
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="iTrainer Logo">
+                <p>Cuidando da sua saúde desde 2025</p>
+            </div>
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="profissionais.html">Profissionais</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contato</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Principal, 123 - Centro</p>
+                <p><i class="fas fa-phone"></i> (21) 1234-5678</p>
+                <p><i class="fas fa-envelope"></i> contato@iTrainer.com</p>
+            </div>
+            <div class="footer-social">
+                <h3>Redes Sociais</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 iTrainer. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+  <!-- Estilo adicional embutido -->
+  <style>
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .dashboard {
+      padding-top: 100px;
+    }
+
+    .dashboard h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background:black;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary-color);
+    }
+  </style>
+</body>
+</html>

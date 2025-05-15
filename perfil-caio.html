@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caio Antunes - Personal Trainer | iTRAINER</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <div class="logo-container">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <span class="logo-text">iTRAINER</span>
+                </a>
+            </div>
+            <nav class="primary-navigation">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="profissionais.html" class="nav-link">Profissionais</a></li>
+                    <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="login.html" class="btn btn-login">Entrar</a>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="profile-section">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-image">
+                    <img src="WhatsApp%20Image%202025-03-18%20at%2021.06.45.jpeg" alt="Caio Antunes">
+                    <div class="profile-status">
+                        <span class="status-indicator online"></span>
+                        <span>Online</span>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h1>Caio Antunes</h1>
+                    <p class="profile-title">Personal Trainer</p>
+                    <div class="profile-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-value">4.7</span>
+                        <span class="reviews-count">(170+ avaliações)</span>
+                    </div>
+                    <div class="profile-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Maricá, RJ</span>
+                    </div>
+                    <div class="profile-actions">
+                        <a href="#" class="btn btn-primary">Agendar Aula</a>
+                        <a href="#" class="btn btn-secondary">Enviar Mensagem</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-tabs">
+                <button class="tab-btn active" data-tab="sobre">Sobre</button>
+                <button class="tab-btn" data-tab="servicos">Serviços</button>
+                <button class="tab-btn" data-tab="avaliacoes">Avaliações</button>
+                <button class="tab-btn" data-tab="horarios">Horários</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="sobre" class="tab-pane active">
+                    <div class="about-section">
+                        <h2>Sobre Mim</h2>
+                        <p>Sou instrutor de Yoga com mais de 7 anos de experiência, focado em uma prática que une corpo, mente e respiração. Acredito no Yoga como um caminho de equilíbrio e autoconhecimento, sempre respeitando o tempo e os limites de cada pessoa.</p>
+                        
+                        <div class="qualifications">
+                            <h3>Qualificações</h3>
+                            <ul>
+                                <li><i class="fas fa-graduation-cap"></i> Curso de Formação de Instrutor ou Professor de Yoga - Yoga Alliance</li>
+                            </ul>
+                        </div>
+
+                        <div class="specialties">
+                            <h3>Especialidades</h3>
+                            <div class="specialties-grid">
+                                <span class="specialty-tag">Yoga para Gestantes</span>
+                                <span class="specialty-tag">Yoga Infantil</span>
+                                <span class="specialty-tag">Yoga para Terceira Idade</span>
+                                <span class="specialty-tag">Yoga Terapêutica</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="servicos" class="tab-pane">
+                    <div class="services-section">
+                        <h2>Serviços</h2>
+                        <div class="services-grid">
+                            <div class="service-card">
+                                <i class="fas fa-dumbbell service-icon"></i>
+                                <h3>Yoga para Gestantes</h3>
+                                <p>Uma aula de Yoga que ajuda a gestante com respiração, postura e conexão com o bebê.</p>
+                                <div class="service-price">
+                                    <span>R$ 110,00</span>
+                                    <span>/aula</span>
+                                </div>
+                                <a href="#" class="btn btn-primary">Agendar</a>
+                            </div>
+                            <div class="service-card">
+                                <i class="fas fa-users service-icon"></i>
+                                <h3>Yoga Infantil</h3>
+                                <p>Ajuda crianças a desenvolverem consciência corporal, concentração e autocontrole.</p>
+                                <div class="service-price">
+                                    <span>R$ 100,00</span>
+                                    <span>/aula</span>
+                                </div>
+                                <a href="#" class="btn btn-primary">Agendar</a>
+                            </div>
+                            <div class="service-card">
+                                <i class="fas fa-calendar-alt service-icon"></i>
+                                <h3>Yoga Para Terceira Idade</h3>
+                                <p>Aulas mais suaves, focadas em mobilidade, equilíbrio e bem-estar.</p>
+                                <div class="service-price">
+                                    <span>R$ 160,00</span>
+                                    <span>/aula</span>
+                                </div>
+                                <a href="#" class="btn btn-primary">Agendar</a>
+                            </div>
+                            <div class="service-card">
+                                <i class="fas fa-calendar-alt service-icon"></i>
+                                <h3>Yoga Terapêutica</h3>
+                                <p>Foco em tratar ou aliviar dores físicas, tensões, problemas posturais, respiratórios, etc.</p>
+                                <div class="service-price">
+                                    <span>R$ 130,00</span>
+                                    <span>/aula</span>
+                                </div>
+                                <a href="#" class="btn btn-primary">Agendar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="avaliacoes" class="tab-pane">
+                    <div class="reviews-section">
+                        <h2>Avaliações</h2>
+                        <div class="reviews-summary">
+                            <div class="rating-overview">
+                                <div class="overall-rating">
+                                    <span class="rating-value">4.7</span>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span>Baseado em 170+ avaliações</span>
+                                </div>
+                                <div class="rating-bars">
+                                    <div class="rating-bar">
+                                        <span>5 estrelas</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 82.4%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>4 estrelas</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 11.8%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>3 estrelas</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 2.9%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>2 estrelas</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 1.8%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>1 estrela</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 1.2%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <img src="images/cliente1.jpg" alt="Cliente">
+                                        <div>
+                                            <h4>Carlos Silva</h4>
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">2 semanas atrás</span>
+                                </div>
+                                <p class="review-text">Excelente profissional! O Caio me ajudou a muito a conseguir relaxar e focar no meu trabalho como há muito tempo não conseguia.</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <img src="images/cliente2.jpg" alt="Cliente">
+                                        <div>
+                                            <h4>Ana Oliveira</h4>
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">1 mês atrás</span>
+                                </div>
+                                <p class="review-text">Conheci o Caio no início da minha gestação, estou indo para os 6 meses de gestação e tá sendo maravilhoso!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="horarios" class="tab-pane">
+                    <div class="schedule-section">
+                        <h2>Horários Disponíveis</h2>
+                        <div class="schedule-calendar">
+                            <div class="calendar-header">
+                                <h3>Agosto 2024</h3>
+                                <div class="calendar-nav">
+                                    <button><i class="fas fa-chevron-left"></i></button>
+                                    <button><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                            </div>
+                            <div class="calendar-grid">
+                                <div class="calendar-day">
+                                    <span class="day-number">Segunda</span>
+                                    <div class="time-slots">
+                                        <div class="time-slot available">08:00</div>
+                                        <div class="time-slot available">09:00</div>
+                                        <div class="time-slot booked">10:00</div>
+                                        <div class="time-slot available">11:00</div>
+                                        <div class="time-slot available">14:00</div>
+                                        <div class="time-slot available">15:00</div>
+                                        <div class="time-slot booked">16:00</div>
+                                        <div class="time-slot available">17:00</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <span class="day-number">Terça</span>
+                                    <div class="time-slots">
+                                        <div class="time-slot available">08:00</div>
+                                        <div class="time-slot available">09:00</div>
+                                        <div class="time-slot available">10:00</div>
+                                        <div class="time-slot booked">11:00</div>
+                                        <div class="time-slot available">14:00</div>
+                                        <div class="time-slot available">15:00</div>
+                                        <div class="time-slot available">16:00</div>
+                                        <div class="time-slot booked">17:00</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <span class="day-number">Quarta</span>
+                                    <div class="time-slots">
+                                        <div class="time-slot available">08:00</div>
+                                        <div class="time-slot booked">09:00</div>
+                                        <div class="time-slot available">10:00</div>
+                                        <div class="time-slot available">11:00</div>
+                                        <div class="time-slot available">14:00</div>
+                                        <div class="time-slot booked">15:00</div>
+                                        <div class="time-slot available">16:00</div>
+                                        <div class="time-slot available">17:00</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <span class="day-number">Quinta</span>
+                                    <div class="time-slots">
+                                        <div class="time-slot available">08:00</div>
+                                        <div class="time-slot available">09:00</div>
+                                        <div class="time-slot available">10:00</div>
+                                        <div class="time-slot booked">11:00</div>
+                                        <div class="time-slot available">14:00</div>
+                                        <div class="time-slot available">15:00</div>
+                                        <div class="time-slot available">16:00</div>
+                                        <div class="time-slot booked">17:00</div>
+                                    </div>
+                                </div>
+                                <div class="calendar-day">
+                                    <span class="day-number">Sexta</span>
+                                    <div class="time-slots">
+                                        <div class="time-slot available">08:00</div>
+                                        <div class="time-slot available">09:00</div>
+                                        <div class="time-slot booked">10:00</div>
+                                        <div class="time-slot available">11:00</div>
+                                        <div class="time-slot available">14:00</div>
+                                        <div class="time-slot available">15:00</div>
+                                        <div class="time-slot booked">16:00</div>
+                                        <div class="time-slot available">17:00</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="schedule-legend">
+                                <div class="legend-item">
+                                    <div class="legend-color available"></div>
+                                    <span>Disponível</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color booked"></div>
+                                    <span>Indisponível</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Redes Sociais e Integração -->
+    <section class="social-integration">
+        <div class="container">
+            <h2 class="section-title">Redes Sociais</h2>
+            <div class="social-content">
+                <div class="social-links">
+                    <h3>Siga o caio</h3>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/caio.antns" class="social-icon instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <div class="social-text">
+                                <span class="social-name">Instagram</span>
+                                <span class="social-username">@caio.antns</span>
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/@caiooliveira6508" class="social-icon youtube" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                            <div class="social-text">
+                                <span class="social-name">YouTube</span>
+                                <span class="social-username">Caio Oliveira</span>
+                            </div>
+                        </a>
+                        <a href="https://tiktok.com/@blessthecaio" class="social-icon tiktok" target="_blank">
+                            <i class="fab fa-tiktok"></i>
+                            <div class="social-text">
+                                <span class="social-name">TikTok</span>
+                                <span class="social-username">@blessthecaio</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="instagram-feed">
+                    <h3>Últimos Posts</h3>
+                    <div class="feed-grid">
+                        <div class="feed-item">
+                            <img src="https://via.placeholder.com/300" alt="Post do Instagram">
+                            <div class="feed-overlay">
+                                <i class="fab fa-instagram"></i>
+                                <span>Ver no Instagram</span>
+                            </div>
+                        </div>
+                        <div class="feed-item">
+                            <img src="https://via.placeholder.com/300" alt="Post do Instagram">
+                            <div class="feed-overlay">
+                                <i class="fab fa-instagram"></i>
+                                <span>Ver no Instagram</span>
+                            </div>
+                        </div>
+                        <div class="feed-item">
+                            <img src="https://via.placeholder.com/300" alt="Post do Instagram">
+                            <div class="feed-overlay">
+                                <i class="fab fa-instagram"></i>
+                                <span>Ver no Instagram</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="iTRAINER Logo">
+                <p>Transformando vidas através do fitness</p>
+            </div>
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="profissionais.html">Profissionais</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contato</h3>
+                <p><i class="fas fa-envelope"></i> contato@itrainer.com</p>
+                <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 iTRAINER. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html> 
