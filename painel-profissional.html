@@ -3,12 +3,297 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Painel do Profissional - iTrainer</title>
+  <title>Perfil do Profissional - iTrainer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #00b894;
+      --secondary-color: #0984e3;
+    }
+
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .site-header {
+      background-color: #121212;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-container {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-right: 0.5rem;
+    }
+
+    .logo-text {
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: white;
+    }
+
+    .primary-navigation .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-link,
+    .btn-login {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover,
+    .btn-login:hover {
+      color: var(--primary-color);
+    }
+
+    .profile-header {
+      text-align: center;
+      padding-top: 120px;
+      margin-bottom: 2rem;
+    }
+
+    .profile-header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid var(--primary-color);
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .profile-header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .profile-header p {
+      color: #ccc;
+      margin-top: 0.5rem;
+    }
+
+    .card {
+      background-color: #111;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .day-card {
+      background-color: #222;
+      border-left: 5px solid var(--primary-color);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    .day-card h3 {
+      margin-top: 0;
+      color: var(--primary-color);
+    }
+
+    .day-card ul {
+      padding-left: 1rem;
+    }
+
+    .day-card li {
+      margin-bottom: 0.3rem;
+      color: #eee;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .btn:hover {
+      background-color: var(--secondary-color);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #121212;
+      color: white;
+      padding: 2rem 0 1rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-logo img {
+      width: 100px;
+    }
+
+    .footer-links ul,
+    .footer-contact,
+    .footer-social {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li,
+    .footer-contact p,
+    .footer-social a {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a,
+    .footer-social a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-social .social-icon {
+      font-size: 1.4rem;
+      margin-right: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .semana {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dia {
+  flex: 1;
+  min-width: 150px;
+}
+
+.dia h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.dia ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dia li {
+  padding: 0.4rem;
+  margin-bottom: 0.3rem;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.disponivel {
+  background-color: #28a745; /* Verde */
+}
+
+.marcado {
+  background-color: #dc3545; /* Vermelho */
+}
+
+.carrossel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carrossel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.solicitacao-card {
+  min-width: 300px;
+  margin-right: 1rem;
+  background: #1c1c1c;
+  border-radius: 10px;
+  padding: 1rem;
+  color: #fff;
+  box-shadow: 0 0 5px rgba(255,255,255,0.1);
+}
+
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.carrossel-btn.left {
+  left: 0;
+}
+
+.carrossel-btn.right {
+  right: 0;
+}
+
+
+  </style>
 </head>
 <body>
-  <!-- Cabeçalho padrão -->
+
   <header class="site-header">
     <div class="header-container">
       <div class="logo">
@@ -17,7 +302,6 @@
           <span class="logo-text">iTrainer</span>
         </a>
       </div>
-
       <nav class="primary-navigation">
         <ul class="nav-list">
           <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
@@ -31,135 +315,192 @@
   </header>
 
   <main class="container">
-    <section class="dashboard">
-      <h1>📋 Bem-vindo, Personal!</h1>
-      <p>Gerencie seus alunos, treinos e mensagens com facilidade.</p>
+    <div class="profile-header">
+      <img src="Mulher Musculosa em Treino de Academia.png" alt="Foto do Profissional">
+      <h1>Carla Dias</h1>
+      <p>Profissional desde março de 2023</p>
+    </div>
 
-      <!-- Alunos Ativos -->
-      <div class="card">
-        <h2><i class="fas fa-users"></i> Alunos Ativos</h2>
-        <ul>
-          <li>👤 João Silva - Treino A</li>
-          <li>👤 Ana Paula - Treino B</li>
-          <li>👤 Carla Mendes - Treino C</li>
-        </ul>
-        <a href="#" class="btn btn-secondary">Ver todos os alunos</a>
-      </div>
+    <!-- Horários da Semana -->
+    <div class="card">
+      <h2><i class="fas fa-clock"></i> Horários da Semana</h2>
+      <div class="semana">
+        <!-- Segunda -->
+        <div class="dia">
+          <h3>Segunda</h3>
+          <ul>
+            <li class="disponivel">08:00</li>
+            <li class="marcado">09:00</li>
+            <li class="disponivel">10:00</li>
+            <li class="disponivel">11:00</li>
+            <li class="disponivel">12:00</li>
+            <li class="disponivel">13:00</li>
+            <li class="marcado">14:00</li>
+            <li class="disponivel">15:00</li>
+            <li class="disponivel">16:00</li>
+            <li class="disponivel">17:00</li>
+          </ul>
+        </div>
 
-      <!-- Agenda do Dia -->
-      <div class="card">
-        <h2><i class="fas fa-calendar-alt"></i> Agenda de Hoje</h2>
-        <ul>
-          <li>🕘 09:00 - Aula com João</li>
-          <li>🕚 11:00 - Consulta com Ana</li>
-          <li>🕓 16:00 - Feedback com Carla</li>
-        </ul>
-      </div>
+        <!-- Terça -->
+        <div class="dia">
+          <h3>Terça</h3>
+          <ul>
+            <li class="disponivel">08:00</li>
+            <li class="disponivel">09:00</li>
+            <li class="marcado">10:00</li>
+            <li class="disponivel">11:00</li>
+            <li class="disponivel">12:00</li>
+            <li class="disponivel">13:00</li>
+            <li class="disponivel">14:00</li>
+            <li class="marcado">15:00</li>
+            <li class="disponivel">16:00</li>
+            <li class="disponivel">17:00</li>
+          </ul>
+        </div>
 
-      <!-- Mensagens dos Alunos -->
-      <div class="card">
-        <h2><i class="fas fa-comments"></i> Mensagens Recentes</h2>
-        <ul>
-          <li>📩 João: "Fiquei com dúvida no exercício 3."</li>
-          <li>📩 Ana: "Consegui completar o treino!"</li>
-        </ul>
-        <a href="#" class="btn">Responder mensagens</a>
-      </div>
+        <!-- Quarta -->
+        <div class="dia">
+          <h3>Quarta</h3>
+          <ul>
+            <li class="disponivel">08:00</li>
+            <li class="disponivel">09:00</li>
+            <li class="disponivel">10:00</li>
+            <li class="disponivel">11:00</li>
+            <li class="marcado">12:00</li>
+            <li class="disponivel">13:00</li>
+            <li class="disponivel">14:00</li>
+            <li class="disponivel">15:00</li>
+            <li class="disponivel">16:00</li>
+            <li class="disponivel">17:00</li>
+          </ul>
+        </div>
 
-      <!-- Histórico de Treinos -->
-      <div class="card">
-        <h2><i class="fas fa-folder-open"></i> Treinos Enviados</h2>
-        <ul>
-          <li>📁 Treino A - Atualizado em 10/05</li>
-          <li>📁 Treino B - Atualizado em 08/05</li>
-        </ul>
-        <a href="#" class="btn btn-secondary">Ver histórico completo</a>
+        <!-- Quinta -->
+        <div class="dia">
+          <h3>Quinta</h3>
+          <ul>
+            <li class="disponivel">08:00</li>
+            <li class="marcado">09:00</li>
+            <li class="disponivel">10:00</li>
+            <li class="disponivel">11:00</li>
+            <li class="disponivel">12:00</li>
+            <li class="disponivel">13:00</li>
+            <li class="disponivel">14:00</li>
+            <li class="disponivel">15:00</li>
+            <li class="marcado">16:00</li>
+            <li class="disponivel">17:00</li>
+          </ul>
+        </div>
+
+        <!-- Sexta -->
+        <div class="dia">
+          <h3>Sexta</h3>
+          <ul>
+            <li class="disponivel">08:00</li>
+            <li class="disponivel">09:00</li>
+            <li class="disponivel">10:00</li>
+            <li class="marcado">11:00</li>
+            <li class="disponivel">12:00</li>
+            <li class="disponivel">13:00</li>
+            <li class="disponivel">14:00</li>
+            <li class="disponivel">15:00</li>
+            <li class="disponivel">16:00</li>
+            <li class="disponivel">17:00</li>
+          </ul>
+        </div>
       </div>
+    </div>
+
+
+    <section class="card">
+      <h2><i class="fas fa-calendar-check"></i> Aulas Marcadas na Semana</h2>
+      <ul>
+        <li>📅 Segunda - 09:00 com João Silva</li>
+        <li>📅 Terça - 10:00 com Ana Paula</li>
+        <li>📅 Quinta - 15:00 com Carlos Souza</li>
+      </ul>
     </section>
-  </main>
 
-  <!-- Rodapé padrão -->
+    <div class="card">
+      <h2><i class="fas fa-user-clock"></i> Solicitações de Aula</h2>
+      <div class="carrossel-container">
+        <button class="carrossel-btn left" onclick="moverCarrossel(-1)">&#10094;</button>
+        <div class="carrossel" id="carrosselSolicitacoes">
+          <div class="solicitacao-card">
+            <p><strong>Aluno:</strong> João Silva</p>
+            <p><strong>Horário:</strong> Segunda - 10:00</p>
+            <p><strong>Mensagem:</strong> Gostaria de focar em abdômen.</p>
+          </div>
+          <div class="solicitacao-card">
+            <p><strong>Aluno:</strong> Ana Paula</p>
+            <p><strong>Horário:</strong> Terça - 14:00</p>
+            <p><strong>Mensagem:</strong> Preferência por exercícios ao ar livre.</p>
+          </div>
+          <div class="solicitacao-card">
+            <p><strong>Aluno:</strong> Carlos Mendes</p>
+            <p><strong>Horário:</strong> Quinta - 11:00</p>
+            <p><strong>Mensagem:</strong> Treino leve de recuperação.</p>
+          </div>
+          <!-- Adicione mais cards conforme necessário -->
+        </div>
+        <button class="carrossel-btn right" onclick="moverCarrossel(1)">&#10095;</button>
+      </div>
+    </div>
+
+    <script>
+  let scrollIndex = 0;
+  const carrossel = document.getElementById("carrosselSolicitacoes");
+
+  function moverCarrossel(direcao) {
+    const larguraCard = carrossel.querySelector(".solicitacao-card").offsetWidth + 16; // 16 = margin
+    scrollIndex += direcao;
+    const maxIndex = carrossel.children.length - 1;
+    if (scrollIndex < 0) scrollIndex = 0;
+    if (scrollIndex > maxIndex) scrollIndex = maxIndex;
+    carrossel.style.transform = `translateX(-${scrollIndex * larguraCard}px)`;
+  }
+</script>
+
+
+
   <footer>
     <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="images/logo.png" alt="iTrainer Logo">
-                <p>Cuidando da sua saúde desde 2025</p>
-            </div>
-            <div class="footer-links">
-                <h3>Links Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="profissionais.html">Profissionais</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>Contato</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Av. Principal, 123 - Centro</p>
-                <p><i class="fas fa-phone"></i> (21) 1234-5678</p>
-                <p><i class="fas fa-envelope"></i> contato@iTrainer.com</p>
-            </div>
-            <div class="footer-social">
-                <h3>Redes Sociais</h3>
-                <div class="social-icons">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="iTrainer Logo">
+          <p>Cuidando da sua saúde desde 2025</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 iTrainer. Todos os direitos reservados.</p>
+        <div class="footer-links">
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="profissionais.html">Profissionais</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+          </ul>
         </div>
+        <div class="footer-contact">
+          <h3>Contato</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Av. Principal, 123 - Centro</p>
+          <p><i class="fas fa-phone"></i> (21) 1234-5678</p>
+          <p><i class="fas fa-envelope"></i> contato@iTrainer.com</p>
+        </div>
+        <div class="footer-social">
+          <h3>Redes Sociais</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 iTrainer. Todos os direitos reservados.</p>
+      </div>
     </div>
-</footer>
+  </footer>
 
-  <!-- Estilo adicional embutido -->
-  <style>
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    .dashboard {
-      padding-top: 100px;
-    }
-
-    .dashboard h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .card {
-      background:black;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .card h2 {
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-      color: var(--primary-color);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background-color: var(--primary-color);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    .btn-secondary {
-      background-color: var(--secondary-color);
-    }
-  </style>
 </body>
 </html>
