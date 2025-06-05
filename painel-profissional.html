@@ -302,13 +302,13 @@
           <span class="logo-text">iTrainer</span>
         </a>
       </div>
-      <nav class="primary-navigation">
+      <nav class="primary-navigation" id="primary-navigation">
         <ul class="nav-list">
-          <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
           <li class="nav-item"><a href="profissionais.html" class="nav-link">Profissionais</a></li>
           <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
           <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
-          <li class="nav-item"><a href="login.html" class="btn-login">Sair</a></li>
+          <li class="nav-item"><button onclick="logout()" class="btn btn-secondary">Sair</button></li>
         </ul>
       </nav>
     </div>
@@ -462,7 +462,12 @@
   }
 </script>
 
-
+<script>
+function logout() {
+  localStorage.removeItem('userType');
+  window.location.href = 'login.html';
+}
+</script>
 
   <footer>
     <div class="container">

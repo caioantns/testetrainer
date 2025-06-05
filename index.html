@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="iTrainer: Conecte-se com profissionais de treinamento personalizado, agende treinos, receba acompanhamento físico e nutricional, e transforme sua vida com saúde e bem-estar.">
     <title>iTrainer - Transforme sua vida através do treinamento personalizado</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Header Section -->
@@ -114,7 +116,7 @@
                     <a href="sobre.html" class="btn btn-secondary">Saiba Mais</a>
                 </div>
                 <div class="about-image" data-aos="fade-left">
-                    <img src="personal header.jpg" alt="Nosso Site">
+                    <img src="personal header.jpg" alt="Personal trainer dando instruções para aluno" loading="lazy">
                 </div>
             </div>
         </section>
@@ -129,7 +131,7 @@
                             <p>"Excelente atendimento! Os profissionais são muito atenciosos e o acompanhamento é excepcional!"</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="imagesfotoo.jpg" alt="Paciente">
+                            <img src="imagesfotoo.jpg" alt="Cliente Maria Silva sorrindo após treino" loading="lazy">
                             <div class="author-info">
                                 <span class="author-name">Maria Silva</span>
                                 <span class="author-title">Cliente desde 2025</span>
@@ -142,7 +144,7 @@
                             <p>"Sempre encontro horários disponíveis e o atendimento é rápido e eficiente. Recomendo!"</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="pexels-olly-3789888.jpg" alt="Paciente">
+                            <img src="pexels-olly-3789888.jpg" alt="Cliente João Santos feliz após treino" loading="lazy">
                             <div class="author-info">
                                 <span class="author-name">João Santos</span>
                                 <span class="author-title">Cliente desde 2025</span>
@@ -202,7 +204,7 @@
     <div class="chat-modal" id="chatModal">
         <div class="chat-header">
             <h3>Suporte ao Cliente</h3>
-            <button class="close-chat"><i class="fas fa-times"></i></button>
+            <button class="close-chat" aria-label="Fechar chat"><i class="fas fa-times"></i></button>
         </div>
         <div class="chat-body">
             <div class="chat-messages">
@@ -221,7 +223,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="images/logo.png" alt="iTrainer Logo">
+                    <img src="images/logo.png" alt="Logo iTrainer">
                     <p>Cuidando da sua saúde desde 2025</p>
                 </div>
                 <div class="footer-links">
@@ -263,5 +265,22 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loginMenu = document.getElementById('loginMenu');
+      if (!loginMenu) return;
+      const userType = localStorage.getItem('userType');
+      if (userType === 'client') {
+        loginMenu.textContent = 'Área do Aluno';
+        loginMenu.href = 'painel-aluno.html';
+      } else if (userType === 'professional') {
+        loginMenu.textContent = 'Área do Profissional';
+        loginMenu.href = 'painel-profissional.html';
+      } else {
+        loginMenu.textContent = 'Login';
+        loginMenu.href = 'login.html';
+      }
+    });
+    </script>
 </body>
 </html>
